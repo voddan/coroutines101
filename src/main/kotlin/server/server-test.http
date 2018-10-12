@@ -1,0 +1,13 @@
+GET localhost:8080/random
+
+###
+
+GET localhost:8080/sum
+
+###
+
+POST localhost:8080/sum
+
+10
+
+###
