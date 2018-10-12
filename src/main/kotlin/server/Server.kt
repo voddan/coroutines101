@@ -10,6 +10,7 @@ import io.ktor.routing.route
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import kotlinx.coroutines.delay
 import java.util.*
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.math.absoluteValue
@@ -23,8 +24,27 @@ object Server {
     fun main(args: Array<String>) {
         val server = embeddedServer(Netty, port = 8080) {
             routing {
-                get("/random") {
-                    call.respondText(random.nextInt(10000000).toString())
+                route("/random") {
+
+                    get {
+                        call.respondText(random.nextInt(10000000).toString())
+                    }
+
+                    route("/slow") {
+
+                        get {
+                            delay(1000)
+                            call.respondText(random.nextInt(10000000).toString())
+                        }
+
+                        get("/error") {
+                            delay(1000)
+                            if(random.nextBoolean())
+                                call.respondText(random.nextInt(10000000).toString())
+                            else
+                                error("Something went terribly wrong :(")
+                        }
+                    }
                 }
 
                 route("/sum") {

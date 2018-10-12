@@ -1,0 +1,11 @@
+GET localhost:8080/random
+
+###
+
+GET localhost:8080/random/slow
+
+###
+
+GET localhost:8080/random/slow/error
+
+###
