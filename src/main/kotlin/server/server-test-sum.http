@@ -2,7 +2,17 @@ GET localhost:8080/sum
 
 ###
 
+GET localhost:8080/sum/slow
+
+###
+
 POST localhost:8080/sum
+
+10
+
+###
+
+POST localhost:8080/sum/slow
 
 10
 

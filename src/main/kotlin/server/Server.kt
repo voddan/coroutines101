@@ -1,15 +1,17 @@
 package server
 
 import io.ktor.application.call
-import io.ktor.request.receive
+import io.ktor.http.HttpHeaders
+import io.ktor.http.HttpMethod
+import io.ktor.http.HttpStatusCode
 import io.ktor.request.receiveText
+import io.ktor.response.respond
+import io.ktor.response.respondRedirect
 import io.ktor.response.respondText
-import io.ktor.routing.get
-import io.ktor.routing.post
-import io.ktor.routing.route
-import io.ktor.routing.routing
+import io.ktor.routing.*
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import io.ktor.util.pipeline.ContextDsl
 import kotlinx.coroutines.delay
 import java.util.*
 import java.util.concurrent.atomic.AtomicInteger
@@ -63,6 +65,29 @@ object Server {
                         call.respondText("$sum $sign ${value.absoluteValue} = $newSum")
                         sum.addAndGet(value)
                     }
+                }
+
+                route("/sum/slow") {
+                    get() {
+                        delay(1000)
+                        call.respondText(sum.toString())
+                    }
+
+                    post() {
+                        delay(1000)
+
+                        val text = call.receiveText()
+                        val value = text.toIntOrNull() ?: error("Can't parse $text to Int")
+
+                        val oldSum = sum.get()
+                        val newSum = oldSum + value
+                        val sign = if(value >= 0) "+" else "-"
+
+                        call.respondText("$sum $sign ${value.absoluteValue} = $newSum")
+                        sum.addAndGet(value)
+                    }
+
+                    delaysAndErrors()
                 }
             }
         }
