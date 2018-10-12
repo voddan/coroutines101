@@ -1,6 +1,7 @@
 package client
 
 import khttp.get
+import khttp.post
 import java.util.*
 
 object NaiveClient
@@ -33,6 +34,57 @@ object RouletteGameClient {
             println("Congrats, your guess $guess was correct! ")
         else
             println("Sorry, your guess $guess was incorrect :( ")
+
+    }
+
+    val input = Scanner(System.`in`);
+}
+
+
+object BankClient {
+    @JvmStatic fun main(args: Array<String>) {
+
+        println("Welcome to our bank client!")
+
+        val value = get("http://127.0.0.1:8080/sum")
+            .content.toString(Charsets.UTF_8).toInt()
+
+        println("You have $value on your account.")
+
+        println("Increase or decrease your deposit by typing a number:")
+
+        val num = input.nextInt()
+
+        val response = post("http://127.0.0.1:8080/sum", data = num)
+            .content.toString(Charsets.UTF_8)
+
+        println(response)
+
+    }
+
+    val input = Scanner(System.`in`);
+}
+
+object InteractiveBankClient {
+    @JvmStatic fun main(args: Array<String>) {
+
+        println("Welcome to our interactive bank client!")
+
+        val value = get("http://127.0.0.1:8080/sum")
+            .content.toString(Charsets.UTF_8).toInt()
+
+        println("You have $value on your account.")
+
+        println("Increase or decrease your deposit by typing a number:")
+
+        while(true) {
+            val num = input.nextInt()
+
+            val response = post("http://127.0.0.1:8080/sum/slow", data = num)
+                .content.toString(Charsets.UTF_8)
+
+            println(response)
+        }
 
     }
 
