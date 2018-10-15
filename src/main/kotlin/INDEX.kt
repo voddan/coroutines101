@@ -1,4 +1,8 @@
 /**
+ * - Why are we here?
+ *
+ *   - What are coroutines? [theory.SuspendableComputation]
+ *
  * - The Problem:
  *
  *   - Naive web client
@@ -8,8 +12,6 @@
  *   - Promise web client
  *
  * - The solution:
- *
- *   - What are coroutines? [theory.SuspendableComputation]
  *
  *   - Coroutine web client [client.CoroutineClient]
  *
