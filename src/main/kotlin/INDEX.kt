@@ -1,3 +1,5 @@
+import clients.random.errors.ErrorSuspend
+
 /**
  * - Why are we here?
  *
@@ -24,6 +26,13 @@
  *  - Keeping the house clean:
  *
  *    - Error Handling
+ *
+ *   [clients.random.errors.ErrorSuspend]
+ *   [clients.random.errors.ErrorSuspendCatch]
+ *   [clients.random.errors.ErrorLaunch]
+ *   [clients.random.errors.ErrorLaunchCatch]
+ *   [clients.random.errors.ErrorAsync]
+ *   [clients.random.errors.ErrorAsyncCatch]
  *
  *    - Cancellation
  *

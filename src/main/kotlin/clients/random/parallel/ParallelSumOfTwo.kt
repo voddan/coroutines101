@@ -9,6 +9,9 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
+/**
+ * We start 2 coroutines simultaneously, then wait for results
+ * */
 object ParallelSumOfTwo
 
 

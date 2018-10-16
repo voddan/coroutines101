@@ -1,5 +1,6 @@
 package clients.random.parallel.loopsum
 
+import clients.random.errors.ErrorSuspend
 import clients.random.parallel.benchmark.Benchmark
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
@@ -10,6 +11,9 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
+/**
+ * How much faster will the parallel execution be?
+ * */
 object ParallelLoopSum
 
 
@@ -54,4 +58,4 @@ private object Measure {
 
 private val benchmark = Benchmark
 
-private val `next point` = 0
+private val `next point` = ErrorSuspend
