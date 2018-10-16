@@ -3,17 +3,9 @@
  *
  *   - What are coroutines? [theory.SuspendableComputation]
  *
- * - The Problem:
+ * - Asynchronous clients:
  *
- *   - Naive web client
- *
- *   - Callback web client
- *
- *   - Promise web client
- *
- * - The solution:
- *
- *   - Coroutine web client [client.CoroutineClient]
+ *   - One Async Request [client.random.GetSingleValue]
  *
  * - Other usages:
  *

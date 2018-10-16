@@ -30,6 +30,7 @@ dependencies {
 //    compile "com.netflix.rxjava:rxjava-apache-http:0.21.0"
     compile "io.reactivex:rxapache-http:0.21.0"
     compile "org.apache.httpcomponents:httpasyncclient:4.1.4"
+    compile "commons-io:commons-io:2.5"
 
     //KTOR features
     compile "io.ktor:ktor-jackson:$ktor_version"
