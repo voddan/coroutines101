@@ -18,7 +18,8 @@
  *
  *   - Parallel Async Requests
  *
- *   [clients.random.parallel.ParallelExecution]
+ *   [clients.random.parallel.sumoftwo.ParallelSumOfTwo]
+ *   [clients.random.parallel.loopsum.ParallelLoopSum]
  *
  *  - Keeping the house clean:
  *

@@ -8,10 +8,9 @@ import clients.random.several.SumOfTwo
 
 
 /**
- * To dispatch wark to different threads/flows/contexts,
- * we launch coroutines
+ * How many coroutines can we launch?
  */
-object LaunchingACoroutine
+object MaxLaunch
 
 
 
@@ -25,16 +24,16 @@ private val client = HttpClient(Apache)
  * */
 suspend fun main(args: Array<String>) {
     coroutineScope {
-        println("World!")
 
-        launch {
+        repeat(1000) { i ->
+            launch {
 
-            val value = client.get<String>(URL).toInt()
+                val value = client.get<String>(URL).toInt()
 
-            println("We got $value")
+                println("Coroutine $i got $value")
+            }
         }
 
-        println("Hello!")
     }
 }
 
@@ -43,4 +42,4 @@ suspend fun main(args: Array<String>) {
 
 
 
-private val `next point` = MaxLaunch
+private val `next point` = SumOfTwo

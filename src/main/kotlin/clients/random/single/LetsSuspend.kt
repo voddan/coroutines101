@@ -10,10 +10,11 @@ import org.apache.http.client.methods.HttpGet
 
 
 /**
- * Our server at http://127.0.0.1:8080/random
- * returns an integer value on GET
- * and that's it.
- */
+ * import io.ktor.client.HttpClient
+ * import io.ktor.client.engine.apache.Apache
+ *
+ * Pay attention to this little `suspend` ;)
+ * */
 object LetsSuspend
 
 
@@ -21,10 +22,7 @@ private val URL = "http://127.0.0.1:8080/random"
 
 private val client = HttpClient(Apache)
 
-/**
- * import io.ktor.client.HttpClient
- * import io.ktor.client.engine.apache.Apache
- * */
+
 suspend fun main(args: Array<String>) {
     val value = client.get<String>(URL).toInt()
 
