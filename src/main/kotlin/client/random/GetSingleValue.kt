@@ -91,9 +91,6 @@ object Same_Thing_With_Callbacks {
 
 
 
-/**
- * Keep calm and use a thread pool
- * */
 object Launching_Another_Coroutine {
     val client = HttpClient(Apache)
 
