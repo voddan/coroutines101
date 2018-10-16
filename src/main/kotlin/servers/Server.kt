@@ -1,10 +1,8 @@
-package server
+package servers
 
 import io.ktor.application.ApplicationCallPipeline
 import io.ktor.application.call
-import io.ktor.http.HttpHeaders
 import io.ktor.request.receiveText
-import io.ktor.response.respondRedirect
 import io.ktor.response.respondText
 import io.ktor.routing.*
 import io.ktor.server.engine.embeddedServer

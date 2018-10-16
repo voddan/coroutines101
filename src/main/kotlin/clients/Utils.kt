@@ -1,12 +1,9 @@
-package client
+package clients
 
-import org.apache.commons.io.IOUtils
 import org.apache.http.HttpResponse
 import org.apache.http.client.methods.HttpUriRequest
-import org.apache.http.client.protocol.HttpClientContext
 import org.apache.http.concurrent.FutureCallback
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient
-import org.apache.http.impl.nio.client.HttpAsyncClients
 import org.apache.http.nio.client.HttpAsyncClient
 import java.lang.Exception
 import java.util.concurrent.Future

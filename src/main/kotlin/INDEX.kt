@@ -5,11 +5,20 @@
  *
  * - Asynchronous clients:
  *
- *   - One Async Request [client.random.GetSingleValue]
+ *   - One Async Request
  *
- *   - Multiple Async Requests [client.random.GetSeveralValues]
+ *   [clients.random.single.AsUsual]
+ *   [clients.random.single.LetsSuspend]
+ *   [clients.random.single.LaunchingACoroutine]
  *
- *   - Parallel Async Requests [client.random.ParallelExecution]
+ *   - Multiple Async Requests
+ *
+ *   [clients.random.several.SumOfTwo]
+ *   [clients.random.several.RequestsInALoop]
+ *
+ *   - Parallel Async Requests
+ *
+ *   [clients.random.parallel.ParallelExecution]
  *
  *  - Keeping the house clean:
  *
