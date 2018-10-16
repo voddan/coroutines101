@@ -6,6 +6,8 @@ import io.ktor.client.request.get
 
 /**
  * How do we combine results of multiple requests?
+ *
+ * (Sequentially)
  * */
 object SumOfTwo
 

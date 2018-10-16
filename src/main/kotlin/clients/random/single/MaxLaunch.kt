@@ -19,9 +19,7 @@ private val URL = "http://127.0.0.1:8080/random"
 private val client = HttpClient(Apache)
 
 
-/**
- * Coroutine scope limit the life cycle
- * */
+
 suspend fun main(args: Array<String>) {
     coroutineScope {
 

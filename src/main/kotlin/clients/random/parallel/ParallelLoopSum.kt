@@ -1,5 +1,6 @@
 package clients.random.parallel.loopsum
 
+import clients.random.parallel.benchmark.Benchmark
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
@@ -33,7 +34,7 @@ suspend fun main(args: Array<String>) = coroutineScope {
 
 
 
-private object MeasureLoop {
+private object Measure {
     @JvmStatic
     fun main(args: Array<String>) {
         val mills = measureTimeMillis {
@@ -49,5 +50,8 @@ private object MeasureLoop {
 
 
 
+
+
+private val benchmark = Benchmark
 
 private val `next point` = 0

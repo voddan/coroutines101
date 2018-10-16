@@ -1,4 +1,4 @@
-package clients.random.parallel.sumoftwo
+package clients.random.parallel.benchmark
 
 import clients.random.parallel.loopsum.ParallelLoopSum
 import io.ktor.client.HttpClient
@@ -9,7 +9,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
-object ParallelSumOfTwo
+object Benchmark
 
 
 private val URL = "http://127.0.0.1:8080/random/slow"
@@ -18,33 +18,25 @@ private val client = HttpClient(Apache)
 
 
 suspend fun main(args: Array<String>) = coroutineScope {
-    val value1 = async {
-        client.get<String>(URL).toInt()
+    var sum = 0
+
+    repeat(10) {
+        val value = client.get<String>(URL).toInt()
+
+        sum += value
     }
 
-    val value2 = async {
-        client.get<String>(URL).toInt()
-    }
-
-    val sum = value1.await() + value2.await()
-
-    println("Parallel sum of values is $sum")
+    println("Sum of 10 random values is $sum")
 }
 
 
 
-/**
- * Need `runBlocking` to start a chain of `suspend` functions
- *
- * fun <T> runBlocking(block: suspend CoroutineScope.() -> T): T
- *
- * */
 private object Measure {
     @JvmStatic
     fun main(args: Array<String>) {
         val mills = measureTimeMillis {
             runBlocking {
-                clients.random.parallel.sumoftwo.main(args)
+                clients.random.parallel.benchmark.main(args)
             }
         }
 
@@ -56,4 +48,4 @@ private object Measure {
 
 
 
-private val `next point` = ParallelLoopSum
+private val `go back` = ParallelLoopSum

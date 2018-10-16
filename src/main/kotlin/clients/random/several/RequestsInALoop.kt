@@ -7,6 +7,8 @@ import clients.random.parallel.sumoftwo.ParallelSumOfTwo
 
 /**
  * How do we combine results of multiple requests?
+ *
+ * (Sequentially)
  * */
 object RequestsInALoop
 

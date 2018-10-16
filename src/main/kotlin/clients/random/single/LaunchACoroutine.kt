@@ -8,7 +8,7 @@ import clients.random.several.SumOfTwo
 
 
 /**
- * To dispatch wark to different threads/flows/contexts,
+ * To dispatch work to different threads/flows/contexts,
  * we launch coroutines
  */
 object LaunchingACoroutine
@@ -21,7 +21,8 @@ private val client = HttpClient(Apache)
 
 
 /**
- * Coroutine scope limit the life cycle
+ * Coroutine scope limits the life cycle of the coroutines.
+ * All coroutines must finish before the scope is closed.
  * */
 suspend fun main(args: Array<String>) {
     coroutineScope {

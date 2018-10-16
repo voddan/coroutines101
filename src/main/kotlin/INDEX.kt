@@ -29,6 +29,10 @@
  *
  * - Other usages:
  *
+ *   - Channels
+ *
+ *   - Actors
+ *
  *   - Coroutine web server
  * */
 object INDEX
