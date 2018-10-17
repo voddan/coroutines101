@@ -4,6 +4,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
 import kotlinx.coroutines.*
+import usecases.Actors
 
 /**
  * We can cancel any coroutine cooperatively
@@ -32,4 +33,4 @@ suspend fun main(args: Array<String>) = coroutineScope<Unit> {
 
 
 
-private val `next point` = ErrorParallelLaunches
+private val `next point` = Actors
