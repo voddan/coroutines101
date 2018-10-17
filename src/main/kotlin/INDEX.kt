@@ -1,3 +1,4 @@
+object INDEX
 /**
  * - Why are we here?
  *
@@ -30,22 +31,19 @@
  *   [clients.random.errors.ErrorLaunch]
  *   [clients.random.errors.ErrorLaunchCatch]
  *
- *   ???
+ *   (with a hack)
  *   [clients.random.errors.ErrorAsync]
  *   [clients.random.errors.ErrorAsyncCatch]
  *
- *    - Cancellation??
+ *    - Cancellation
  *
  *   [clients.random.cancellation.SimpleCancellation]
- *   [clients.random.cancellation.ScopedCancellation]
- *   [clients.random.cancellation.ErrorParallelLaunches]
- *   [clients.random.cancellation.CancelParallelLaunches]
  *
  * - Other usages:
  *
- *   - Channels
- *
  *   - Actors
+ *
+ *   - Channels
  *
  *   - Select
  *
@@ -53,4 +51,3 @@
  *
  *   - Coroutine web server
  * */
-object INDEX
