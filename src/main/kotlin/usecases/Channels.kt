@@ -76,3 +76,13 @@ val salt = GlobalScope.produce<Int> {
         channel.send(value)
     }
 }
+
+
+
+
+
+
+
+
+
+private val `go next` = Select

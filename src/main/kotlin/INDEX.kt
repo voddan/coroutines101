@@ -29,10 +29,12 @@
  *   [clients.random.errors.ErrorSuspendCatch]
  *   [clients.random.errors.ErrorLaunch]
  *   [clients.random.errors.ErrorLaunchCatch]
+ *
+ *   ???
  *   [clients.random.errors.ErrorAsync]
  *   [clients.random.errors.ErrorAsyncCatch]
  *
- *    - Cancellation
+ *    - Cancellation??
  *
  *   [clients.random.cancellation.SimpleCancellation]
  *   [clients.random.cancellation.ScopedCancellation]
