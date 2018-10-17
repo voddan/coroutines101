@@ -1,5 +1,6 @@
 package clients.random.errors
 
+import clients.random.cancellation.SimpleCancellation
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
@@ -41,4 +42,4 @@ suspend fun main(args: Array<String>) = coroutineScope {
 
 
 
-private val `next point` = 0
+private val `next point` = SimpleCancellation

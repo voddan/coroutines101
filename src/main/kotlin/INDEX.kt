@@ -1,5 +1,3 @@
-import clients.random.errors.ErrorSuspend
-
 /**
  * - Why are we here?
  *
@@ -36,11 +34,20 @@ import clients.random.errors.ErrorSuspend
  *
  *    - Cancellation
  *
+ *   [clients.random.cancellation.SimpleCancellation]
+ *   [clients.random.cancellation.ScopedCancellation]
+ *   [clients.random.cancellation.ErrorParallelLaunches]
+ *   [clients.random.cancellation.CancelParallelLaunches]
+ *
  * - Other usages:
  *
  *   - Channels
  *
  *   - Actors
+ *
+ *   - Select
+ *
+ *   - Synchronous Generators
  *
  *   - Coroutine web server
  * */
