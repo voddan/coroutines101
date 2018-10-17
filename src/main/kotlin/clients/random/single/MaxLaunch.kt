@@ -1,14 +1,15 @@
 package clients.random.single
 
+import clients.random.several.SumOfTwo
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
-import kotlinx.coroutines.*
-import clients.random.several.SumOfTwo
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 
 /**
- * How many coroutines can we launch?
+ * How many coroutine requests can we launch simultaneously?
  */
 object MaxLaunch
 
@@ -38,6 +39,6 @@ suspend fun main(args: Array<String>) {
 
 
 
-
+private val `alternatively` = MaxLaunchSum
 
 private val `next point` = SumOfTwo

@@ -3,8 +3,8 @@ package clients.random.single
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
-import kotlinx.coroutines.*
-import clients.random.several.SumOfTwo
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 
 /**
@@ -23,6 +23,8 @@ private val client = HttpClient(Apache)
 /**
  * Coroutine scope limits the life cycle of the coroutines.
  * All coroutines must finish before the scope is closed.
+ *
+ * The recommended formatting is `in-line`.
  * */
 suspend fun main(args: Array<String>) {
     coroutineScope {

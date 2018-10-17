@@ -1,12 +1,8 @@
 package clients.random.errors
 
-import clients.execute
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
-import org.apache.commons.io.IOUtils
-import org.apache.http.impl.nio.client.HttpAsyncClients
-import org.apache.http.client.methods.HttpGet
 import java.io.IOException
 
 

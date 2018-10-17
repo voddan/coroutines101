@@ -1,5 +1,7 @@
 package theory
 
+import clients.random.single.AsUsual
+
 /**
  * Coroutines are computer-program components that
  * generalize subroutines for non-preemptive multitasking
@@ -99,3 +101,14 @@ object SameWithIterators {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+private val `next point` = AsUsual

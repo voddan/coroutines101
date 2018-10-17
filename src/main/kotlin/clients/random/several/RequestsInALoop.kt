@@ -1,14 +1,14 @@
 package clients.random.several
 
+import clients.random.parallel.sumoftwo.ParallelSumOfTwo
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.request.get
-import clients.random.parallel.sumoftwo.ParallelSumOfTwo
 
 /**
  * How do we combine results of multiple requests?
  *
- * (Sequentially)
+ * Use any loops, if expressions, whatever you like.
  * */
 object RequestsInALoop
 

@@ -10,7 +10,10 @@ import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
 /**
- * We start 2 coroutines simultaneously, then wait for results
+ * We start 2 coroutines simultaneously,
+ * then await for their results.
+ *
+ * How long does it take?
  * */
 object ParallelSumOfTwo
 
@@ -20,7 +23,7 @@ private val URL = "http://127.0.0.1:8080/random/slow"
 private val client = HttpClient(Apache)
 
 
-suspend fun main(args: Array<String>) = coroutineScope {
+suspend fun parallelSumOfTwo() = coroutineScope {
     val value1 = async {
         client.get<String>(URL).toInt()
     }
@@ -36,24 +39,45 @@ suspend fun main(args: Array<String>) = coroutineScope {
 
 
 
+
+suspend fun main(args: Array<String>) {
+    parallelSumOfTwo()
+
+
+//    measureParallelSumOfTwo()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Need `runBlocking` to start a chain of `suspend` functions
  *
  * fun <T> runBlocking(block: suspend CoroutineScope.() -> T): T
  *
  * */
-private object Measure {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val mills = measureTimeMillis {
-            runBlocking {
-                clients.random.parallel.sumoftwo.main(args)
-            }
+private fun measureParallelSumOfTwo() {
+    val mills = measureTimeMillis {
+        runBlocking {
+            parallelSumOfTwo()
         }
-
-        println("Execution time is $mills ms")
     }
+
+    println("Execution time is $mills ms")
 }
+
+
 
 
 

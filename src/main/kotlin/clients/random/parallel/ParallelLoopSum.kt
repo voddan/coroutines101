@@ -8,8 +8,6 @@ import io.ktor.client.request.get
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.runBlocking
-import kotlin.system.measureTimeMillis
 
 /**
  * How much faster will the parallel execution be?
@@ -22,7 +20,7 @@ private val URL = "http://127.0.0.1:8080/random/slow"
 private val client = HttpClient(Apache)
 
 
-suspend fun main(args: Array<String>) = coroutineScope {
+suspend fun parallelLoopSum() = coroutineScope {
     val list = mutableListOf<Deferred<Int>>()
 
     repeat(10) {
@@ -37,18 +35,13 @@ suspend fun main(args: Array<String>) = coroutineScope {
 }
 
 
+suspend fun main(args: Array<String>) {
+    parallelLoopSum()
 
-private object Measure {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val mills = measureTimeMillis {
-            runBlocking {
-                clients.random.parallel.loopsum.main(args)
-            }
-        }
 
-        println("Execution time is $mills ms")
-    }
+//    measure {
+//        parallelLoopSum()
+//    }
 }
 
 
